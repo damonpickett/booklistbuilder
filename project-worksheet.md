@@ -1,5 +1,7 @@
 # Project Overview
 
+[GIF](https://media.giphy.com/media/3o6Mbad3dj18iunbyM/giphy.gif)
+
 ## Project Links
 
 - [add your github repo link]()
@@ -67,29 +69,25 @@ image: true
 
 Upload images of wireframe to cloudinary and add the link here with a description of the specific wireframe. Also, define the the React components and the architectural design of your app.
 
-- [Wireframe - Home Page](https://imgur.com/a/C4Foi8o)
+- [Wireframe](https://imgur.com/a/C4Foi8o)
 - [React Architecture](https://lucid.app/lucidchart/5410928e-1608-4610-84b8-b8491527c5d8/edit?viewport_loc=-11%2C-121%2C1937%2C1365%2C0_0&invitationId=inv_8f9a5fb9-9a4b-40c8-89b1-e7fd0bb3d157)
 
 
 ### MVP/PostMVP - 5min
 
-The functionality will then be divided into two separate lists: MPV and PostMVP.  Carefully decided what is placed into your MVP as the client will expect this functionality to be implemented upon project completion.  
-
-#### MVP EXAMPLE
+#### MVP
 - Random quote generator
 - Book search bar with multiple results
 - Quote search bar with result
 - Ability to compile a reading
 - Ability to compile a quote list
 
-#### PostMVP EXAMPLE
+#### PostMVP
 
 - Ability to have reading and quote lists emailed to user.
 
 ## Components
 ##### Writing out your components and its descriptions isn't a required part of the proposal but can be helpful.
-
-Based on the initial logic defined in the previous sections try and breakdown the logic further into stateless/stateful components. 
 
 | Component | Description | 
 | --- | :---: |  
@@ -102,8 +100,6 @@ Based on the initial logic defined in the previous sections try and breakdown th
 | Book List | A list of books the user has selected from their books search |
 | Quote List | A list of quotes the user has selected from their books search |
 
-
-Time frames are also key in the development cycle.  You have limited time to code all phases of the game.  Your estimates can then be used to evalute game possibilities based on time needed and the actual time you have before game must be submitted. It's always best to pad the time by a few hours so that you account for the unknown so add and additional hour or two to each component to play it safe. Also, put a gif at the top of your Readme before you pitch, and you'll get a panda prize.
 
 | Component | Priority | Estimated Time | Actual Time |
 | --- | :---: |  :---: | :---: | :---: |
