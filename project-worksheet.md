@@ -1,6 +1,6 @@
 # Project Overview
 
-[GIF](https://media.giphy.com/media/3o6Mbad3dj18iunbyM/giphy.gif)
+![](https://media.giphy.com/media/3o6Mbad3dj18iunbyM/giphy.gif)
 
 ## Project Links
 
