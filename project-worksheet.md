@@ -7,15 +7,59 @@
 
 ## Project Description
 
-Use this section to describe your final project and perhaps any links to relevant sites that help convey the concept and\or functionality.
+I'm building an app called BookListBuilder. The purpose of this app is to allow a user to search for books and create a reading list which they can copy from the site and store on their device. I'll be using the Google Books API for my book search database. Selected books will appear on a card with a link to add the book to a list. There will also be a random quote generator as well as a quote search bar so the user can build their reading list off of quotes they find compelling. Users will have the option to create a quote list as well in the same way that they would create a reading list.
 
 ## API
 
 Use this section to include info about the API you have chosen and a code snippet of the data that it returns and is required for your project. 
 
-
+[ZenQuotes API](https://premium.zenquotes.io/zenquotes-documentation/)
 ```
-{data: {} }
+[{
+	"q": "Lack of emotion causes lack of progress and lack of motivation.",
+	"a": "Tony Robbins",
+	"i": "https://zenquotes.io/img/tony-robbins.jpg",
+	"c": "63",
+	"h": "<blockquote>&ldquo;Lack of emotion causes lack of progress and lack of motivation.&rdquo; &mdash; <footer>Tony Robbins</footer></blockquote>"
+},
+// ...MORE DATA... //
+{
+	"q": "The friend is the man who knows all about you, and still likes you.",
+	"a": "Elbert Hubbard",
+	"i": "https://zenquotes.io/img/elbert-hubbard.jpg",
+	"c": "67",
+	"h": "<blockquote>&ldquo;The friend is the man who knows all about you, and still likes you.&rdquo; &mdash; <footer>Elbert Hubbard</footer></blockquote>"
+}]
+```
+
+[Google Books API](https://developers.google.com/books/docs/overview)
+```
+kind: "books#volume",
+id: "_oG_iTxP1pIC",
+etag: "HDJRb5hQEoQ",
+selfLink: "https://www.googleapis.com/books/v1/volumes/_oG_iTxP1pIC",
+volumeInfo: {
+title: "Flowers for Algernon",
+authors: [
+"Daniel Keyes"
+],
+publisher: "Houghton Mifflin Harcourt",
+publishedDate: "2007-12-01",
+description: "Winner of both the Hugo and Nebula Awards, the powerful, classic story about a man who receives an operation that turns him into a genius...and introduces him to heartache. Charlie Gordon is about to embark upon an unprecedented journey. Born with an unusually low IQ, he has been chosen as the perfect subject for an experimental surgery that researchers hope will increase his intelligence-a procedure that has already been highly successful when tested on a lab mouse named Algernon. As the treatment takes effect, Charlie's intelligence expands until it surpasses that of the doctors who engineered his metamorphosis. The experiment appears to be a scientific breakthrough of paramount importance, until Algernon suddenly deteriorates. Will the same happen to Charlie?",
+industryIdentifiers: [
+{
+type: "ISBN_13",
+identifier: "9780547539638"
+},
+{
+type: "ISBN_10",
+identifier: "0547539630"
+}
+],
+readingModes: {
+text: true,
+image: true
+},
 ```
 
 
@@ -23,8 +67,8 @@ Use this section to include info about the API you have chosen and a code snippe
 
 Upload images of wireframe to cloudinary and add the link here with a description of the specific wireframe. Also, define the the React components and the architectural design of your app.
 
-- [add link to your wireframes]()
-- [add link to your react architecture]()
+- [Wireframe - Home Page](https://imgur.com/a/C4Foi8o)
+- [React Architecture](https://lucid.app/lucidchart/5410928e-1608-4610-84b8-b8491527c5d8/edit?viewport_loc=-11%2C-121%2C1937%2C1365%2C0_0&invitationId=inv_8f9a5fb9-9a4b-40c8-89b1-e7fd0bb3d157)
 
 
 ### MVP/PostMVP - 5min
@@ -32,13 +76,15 @@ Upload images of wireframe to cloudinary and add the link here with a descriptio
 The functionality will then be divided into two separate lists: MPV and PostMVP.  Carefully decided what is placed into your MVP as the client will expect this functionality to be implemented upon project completion.  
 
 #### MVP EXAMPLE
-- Find and use external api 
-- Render data on page 
-- Allow user to interact with the page
+- Random quote generator
+- Book search bar with multiple results
+- Quote search bar with result
+- Ability to compile a reading
+- Ability to compile a quote list
 
 #### PostMVP EXAMPLE
 
-- Add localStorage or firebase for storage
+- Ability to have reading and quote lists emailed to user.
 
 ## Components
 ##### Writing out your components and its descriptions isn't a required part of the proposal but can be helpful.
@@ -48,20 +94,39 @@ Based on the initial logic defined in the previous sections try and breakdown th
 | Component | Description | 
 | --- | :---: |  
 | App | This will make the initial data pull and include React Router| 
-| Header | This will render the header include the nav | 
-| Footer | This will render the header include the nav | 
+| Nav | This will show the links for the Home Page and the Lists page | 
+| Random Quote Generator | This will generate a random quote |
+| Instructions | This section will display text advising the user on how to interact with the site |
+| Book Finder | A search bar which the user can use to find books |
+| Quote Finder | A quote finder which the user can use to find quotes |
+| Book List | A list of books the user has selected from their books search |
+| Quote List | A list of quotes the user has selected from their books search |
 
 
 Time frames are also key in the development cycle.  You have limited time to code all phases of the game.  Your estimates can then be used to evalute game possibilities based on time needed and the actual time you have before game must be submitted. It's always best to pad the time by a few hours so that you account for the unknown so add and additional hour or two to each component to play it safe. Also, put a gif at the top of your Readme before you pitch, and you'll get a panda prize.
 
-| Component | Priority | Estimated Time | Time Invetsted | Actual Time |
+| Component | Priority | Estimated Time | Actual Time |
 | --- | :---: |  :---: | :---: | :---: |
-| Adding Form | H | 3hrs| 3.5hrs | 3.5hrs |
-| Working with API | H | 3hrs| 2.5hrs | 2.5hrs |
-| Total | H | 6hrs| 5hrs | 5hrs |
+| Initial app set up | H | 0.5hr | |
+| Nav | H | 2hrs|  |
+| API: Random Quote Generator research | H | 2hrs|  |
+| API: Random Quote Generator implementation | H | 2hrs | |
+| Instructions | H | 1hr | |
+| API: Book Finder research | H | 3hrs | |
+| API: Book Finder implementation | H | 3hrs | |
+| API: Quote Finder research | 2hrs | |
+| API: Quote Finder implementation | 3hrs | |
+| Book List | H | 3hrs | |
+| Quote List | H | 3hrs | |
+| Footer | H | 0.5hrs | |
+| Bootstrap CSS research | H | 3hrs | |
+| Bootstrap CSS implementation | H | 2hrs | |
+| Deployment/bug fixes | H | 3hrs | |
+| Total | H | 33hrs |  |
 
 ## Additional Libraries
- Use this section to list all supporting libraries and thier role in the project such as Axios, ReactStrap, D3, etc. 
+ 
+ Bootstrap
 
 ## Code Snippet
 
