@@ -110,11 +110,11 @@ Upload images of wireframe to cloudinary and add the link here with a descriptio
 | Instructions | H | 1hr | 0.25hr |
 | API: Book Finder research | H | 3hrs | n/a |
 | API: Book Finder implementation | H | 3hrs | n/a |
-| API: Quote Finder research | 2hrs | n/a |
-| API: Quote Finder implementation | 3hrs | n/a |
+| API: Quote Finder research | H | 2hrs | n/a |
+| API: Quote Finder implementation | H | 3hrs | n/a |
 | Book List | H | 3hrs | n/a |
 | Quote List | H | 3hrs | n/a |
-| Footer | H | 0.5hrs | n/a |
+| Footer | H | 0.5hrs | 0.25 |
 | Bootstrap CSS research | H | 3hrs | n/a |
 | Bootstrap CSS implementation | H | 2hrs | n/a |
 | Deployment/bug fixes | H | 3hrs | n/a |
