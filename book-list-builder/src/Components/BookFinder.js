@@ -1,17 +1,52 @@
+import { useState, useEffect, useRef } from "react";
+
 function BookFinder() {
 
-  
+
+  const [book, setBook] = useState('');
+  const [result, setResult] = useState([])
+  const [apiKey, setApiKey] = useState('AIzaSyCUAkQ_kTnVDaR6bOZL_1efEXJbVWwwx6c')
+
+  function handleChange(event) {
+    const book = event.target.value;
+    setBook(book)
+  }
+
+  function handleSubmit(event) {
+    event.preventDefault();
+    fetch(`https://www.googleapis.com/books/v1/volumes?q=${book}&key=${apiKey}&maxResults=20`)
+      .then(res => res.json())
+      .then(data => {
+        console.log(data.items)
+        setResult(data.items)
+      })
+  }
+
+  const searchResultsHTML = result.map(book => {
+    return(
+      <div className='book-card' key={book.id}>
+        {book.volumeInfo.imageLinks ? <img src={book.volumeInfo.imageLinks.thumbnail} alt={book.volumeInfo.title}/> : 'No image available'}
+        <h3>{book.volumeInfo.title}</h3>
+        <p>By {book.volumeInfo.authors}</p>
+        {/* <p key={book.id}>{book.volumeInfo.description}</p> */}
+      </div>
+    )
+  })
+
+  // console.log(searchResultsHTML)
 
   return (
     <div className="book-finder">
       {/* create a form with input and button */}
-      <form>
-        <input type="text" placeholder="Search for books" />
-        <button>Search</button>
+      <form onSubmit={handleSubmit}>
+        <input onChange={handleChange} type="text" placeholder="Search for books" />
+        <button type="submit">Search</button>
       </form>
-      
+      {searchResultsHTML}
     </div>
   );
 }
   
   export default BookFinder;
+
+  // used https://www.youtube.com/watch?v=LGcgChoD_qY&t=740s as a guide for this component

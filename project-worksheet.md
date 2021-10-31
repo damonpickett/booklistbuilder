@@ -105,20 +105,20 @@ Upload images of wireframe to cloudinary and add the link here with a descriptio
 | --- | :---: |  :---: | :---: |
 | Initial app set up | H | 0.5hr | 0.5hr |
 | Nav | H | 2hrs| 0.5hr |
-| API: Random Quote Generator research | H | 2hrs| n/a |
-| API: Random Quote Generator implementation | H | 2hrs | n/a |
+| API: Random Quote Generator research | H | 2hr| 2hr |
+| API: Random Quote Generator implementation | H | 2hr | 2hr |
 | Instructions | H | 1hr | 0.25hr |
-| API: Book Finder research | H | 3hrs | n/a |
-| API: Book Finder implementation | H | 3hrs | n/a |
-| API: Quote Finder research | H | 2hrs | n/a |
-| API: Quote Finder implementation | H | 3hrs | n/a |
-| Book List | H | 3hrs | n/a |
-| Quote List | H | 3hrs | n/a |
-| Footer | H | 0.5hrs | 0.25 |
-| Bootstrap CSS research | H | 3hrs | n/a |
-| Bootstrap CSS implementation | H | 2hrs | n/a |
-| Deployment/bug fixes | H | 3hrs | n/a |
-| Total | H | 33hrs | n/a |
+| API: Book Finder research | H | 3hr | 2hr |
+| API: Book Finder implementation | H | 3hr | 2hr |
+| API: Quote Finder research | H | 2hr | n/a |
+| API: Quote Finder implementation | H | 3hr | n/a |
+| Book List | H | 3hr | n/a |
+| Quote List | H | 3hr | n/a |
+| Footer | H | 0.5hr | 0.25 |
+| Bootstrap CSS research | H | 3hr | n/a |
+| Bootstrap CSS implementation | H | 2hr | n/a |
+| Deployment/bug fixes | H | 3hr | n/a |
+| Total | H | 33hr | n/a |
 
 ## Additional Libraries
  
