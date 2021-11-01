@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-function BookFinder() {
+function BookFinder(props) {
 
 
   const [book, setBook] = useState('');
@@ -25,9 +25,8 @@ function BookFinder() {
   const searchResultsHTML = result.map(book => {
     return(
       <div className='book-card' key={book.id}>
-        {book.volumeInfo.imageLinks ? <img src={book.volumeInfo.imageLinks.thumbnail} alt={book.volumeInfo.title}/> : <p>No image available</p>}
-        <h3>{book.volumeInfo.title}</h3>
-        <p>By {book.volumeInfo.authors}</p>
+        {book.volumeInfo.imageLinks ? <img src={book.volumeInfo.imageLinks.thumbnail} alt={book.volumeInfo.title}/> : <p>No image available<br />{book.volumeInfo.title} by {book.volumeInfo.authors}</p>}
+        <button onClick={() => props.addBookToList(book)}>Add to Reading List</button>
         {/* <p key={book.id}>{book.volumeInfo.description}</p> */}
       </div>
     )
@@ -50,6 +49,3 @@ function BookFinder() {
   export default BookFinder;
 
   // used https://www.youtube.com/watch?v=LGcgChoD_qY&t=740s as a guide for this component
-
-  // User enters a book title or author
-  // 
