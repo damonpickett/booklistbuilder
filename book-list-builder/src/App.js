@@ -4,6 +4,7 @@ import Instructions from './Components/Instructions';
 import Footer from './Components/Footer';
 import RandomQuote from './Components/RandomQuote';
 import BookFinder from './Components/BookFinder';
+import QuoteFinder from './Components/QuoteFinder';
 
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
       <RandomQuote />
       <Instructions />
       <BookFinder />
+      <QuoteFinder />
       <Footer />
     </div>
   );

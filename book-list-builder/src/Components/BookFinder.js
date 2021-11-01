@@ -1,11 +1,11 @@
-import { useState, useEffect, useRef } from "react";
+import { useState } from "react";
 
 function BookFinder() {
 
 
   const [book, setBook] = useState('');
   const [result, setResult] = useState([])
-  const [apiKey, setApiKey] = useState('AIzaSyCUAkQ_kTnVDaR6bOZL_1efEXJbVWwwx6c')
+  const apiKey = 'AIzaSyCUAkQ_kTnVDaR6bOZL_1efEXJbVWwwx6c'
 
   function handleChange(event) {
     const book = event.target.value;
@@ -25,7 +25,7 @@ function BookFinder() {
   const searchResultsHTML = result.map(book => {
     return(
       <div className='book-card' key={book.id}>
-        {book.volumeInfo.imageLinks ? <img src={book.volumeInfo.imageLinks.thumbnail} alt={book.volumeInfo.title}/> : 'No image available'}
+        {book.volumeInfo.imageLinks ? <img src={book.volumeInfo.imageLinks.thumbnail} alt={book.volumeInfo.title}/> : <p>No image available</p>}
         <h3>{book.volumeInfo.title}</h3>
         <p>By {book.volumeInfo.authors}</p>
         {/* <p key={book.id}>{book.volumeInfo.description}</p> */}
@@ -50,3 +50,6 @@ function BookFinder() {
   export default BookFinder;
 
   // used https://www.youtube.com/watch?v=LGcgChoD_qY&t=740s as a guide for this component
+
+  // User enters a book title or author
+  // 
