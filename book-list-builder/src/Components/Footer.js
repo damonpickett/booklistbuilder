@@ -5,7 +5,7 @@ function Footer() {
       <div className="footer">
         <ul>
             <Link to='/'><li>Home</li></Link>
-            <Link to='/mylists'><li>My Lists</li></Link>
+            <Link to='/mylist'><li>My Lists</li></Link>
         </ul>
       </div>
     );

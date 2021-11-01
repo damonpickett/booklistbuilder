@@ -24,7 +24,7 @@ function App() {
       <RandomQuote />
       <Instructions />
       <Route exact path='/' render={() => <BookFinder addBookToList={addBookToList} />}/>
-      <Route exact path='/' render={() => <BookList readingList={readingList} />}/>
+      <Route exact path='/mylist' render={() => <BookList readingList={readingList} />}/>
       <Footer />
     </div>
   );

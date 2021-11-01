@@ -1,20 +1,20 @@
 function BookList(props) {
 
   let myListHTML = props.readingList.map((book) => {
+    // console.log(book.volumeInfo.infoLink)
     return (
-      <div>
+      <div className="book-list">
         <h3>{book.volumeInfo.title}</h3>
         <p>By {book.volumeInfo.authors}</p>
-        <p><a href={book.infoLink} target='_blank' {book.selfLink}</a></p>
+        <p><a href={book.volumeInfo.infoLink} rel='noreferrer' target='_blank'>Buy</a></p>
       </div>
     )
   })
 
   return (
-    <div className="book-list">
-      <h2>My Reading List</h2>
+    <>
       {myListHTML}
-    </div>
+    </>
   );
 }
 

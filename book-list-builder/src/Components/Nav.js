@@ -6,7 +6,7 @@ function Nav() {
         <h1>BookListBuilder</h1>
         <ul>
             <Link to='/'><li>Home</li></Link>
-            <Link to='/mylists'><li>My Lists</li></Link>
+            <Link to='/mylist'><li>My Lists</li></Link>
         </ul>
       </div>
     );
