@@ -27,13 +27,18 @@ function App() {
     setReadingList(newList)
   }
 
+  const copyList = (list) => {
+    // map over reading list, return title, author, and google link
+    // 
+  }
+
   return (
     <div className="App">
       <Nav />
       <RandomQuote />
-      <Instructions />
+      <Route exact path='/' render={() => <Instructions />}/>
       <Route exact path='/' render={() => <BookFinder addBookToList={addBookToList} />}/>
-      <Route exact path='/mylist' render={() => <BookList removeBook={removeBook} readingList={readingList} />}/>
+      <Route exact path='/mylist' render={() => <BookList copyList={copyList} removeBook={removeBook} readingList={readingList} />}/>
       <Footer />
     </div>
   );
