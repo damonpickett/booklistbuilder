@@ -18,11 +18,6 @@ function BookList(props) {
   return (
     <>
       {myListHTML}
-      <div className='copy-button'>
-        <CopyToClipboard text={props.copyList}>
-          <button>Copy to clipboard</button>
-        </CopyToClipboard>
-      </div>
     </>
   );
 }

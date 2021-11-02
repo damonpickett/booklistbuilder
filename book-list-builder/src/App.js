@@ -27,19 +27,13 @@ function App() {
     setReadingList(newList)
   }
 
-  let copyList = readingList.map(listItem => {
-    console.log(readingList)
-    return ` ${listItem.volumeInfo.title} by ${listItem.volumeInfo.authors}
-    `
-  })
-
   return (
     <div className="App">
       <Nav />
       <RandomQuote />
       <Route exact path='/' render={() => <Instructions />}/>
       <Route exact path='/' render={() => <BookFinder addBookToList={addBookToList} />}/>
-      <Route exact path='/mylist' render={() => <BookList copyList={copyList} removeBook={removeBook} readingList={readingList} />}/>
+      <Route exact path='/mylist' render={() => <BookList removeBook={removeBook} readingList={readingList} />}/>
       <Footer />
     </div>
   );
