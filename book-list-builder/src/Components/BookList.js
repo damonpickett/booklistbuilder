@@ -1,3 +1,5 @@
+import {CopyToClipboard} from 'react-copy-to-clipboard';
+
 function BookList(props) {
 
   let myListHTML = props.readingList.map((book, index) => {
@@ -16,8 +18,23 @@ function BookList(props) {
   return (
     <>
       {myListHTML}
+      <div className='copy-button'>
+        <CopyToClipboard text={props.copyList}>
+          <button>Copy to clipboard</button>
+        </CopyToClipboard>
+      </div>
     </>
   );
 }
 
 export default BookList;
+
+// () => {
+//   return /*#__PURE__*/Object(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_9__["jsxDEV"])("p", {
+//     children: "copyList is working"
+//   }, void 0, false, {
+//     fileName: _jsxFileName,
+//     lineNumber: 32,
+//     columnNumber: 7
+//   }, this);
+// }

@@ -27,10 +27,11 @@ function App() {
     setReadingList(newList)
   }
 
-  const copyList = (list) => {
-    // map over reading list, return title, author, and google link
-    // 
-  }
+  let copyList = readingList.map(listItem => {
+    console.log(readingList)
+    return ` ${listItem.volumeInfo.title} by ${listItem.volumeInfo.authors}
+    `
+  })
 
   return (
     <div className="App">
