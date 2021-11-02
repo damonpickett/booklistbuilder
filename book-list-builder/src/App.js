@@ -18,13 +18,22 @@ function App() {
     setReadingList([...readingList, book])
   }
 
+  const removeBook = (indexToRemove) => {
+    let newList = readingList.filter((book, index) => {
+      // console.log(index)
+      return index !== indexToRemove
+    })
+    // console.log(newList)
+    setReadingList(newList)
+  }
+
   return (
     <div className="App">
       <Nav />
       <RandomQuote />
       <Instructions />
       <Route exact path='/' render={() => <BookFinder addBookToList={addBookToList} />}/>
-      <Route exact path='/mylist' render={() => <BookList readingList={readingList} />}/>
+      <Route exact path='/mylist' render={() => <BookList removeBook={removeBook} readingList={readingList} />}/>
       <Footer />
     </div>
   );
