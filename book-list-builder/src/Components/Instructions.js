@@ -5,7 +5,7 @@ function Instructions() {
       <Container>
         <div className="instructions">
           <h2>Welcome</h2>
-          <p>Use BookListBuilder to find books and create a reading list. Not sure what you're looking for? Generate a random quote above and see if anyone's famous words leave you curious for more.</p>
+          <p>Use BookListBuilder to find mad books and create a reading list. Not sure what you're looking for? Generate a random quote above and see if anyone's famous words leave you curious for more.</p>
         </div>
       </Container>
     );
