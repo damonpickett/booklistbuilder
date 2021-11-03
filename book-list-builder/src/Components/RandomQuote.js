@@ -27,6 +27,7 @@ function RandomQuote() {
       <h2>Random Quote</h2>
       <p>{randomQuote.text}</p>
       <p>{randomQuote.author}</p>
+      <button onClick={makeAPICall}>New Quote</button>
     </div>
   );
   }
