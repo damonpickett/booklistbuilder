@@ -1,9 +1,9 @@
-import {CopyToClipboard} from 'react-copy-to-clipboard';
+import { Container } from "react-bootstrap";
 
 function BookList(props) {
 
   let myListHTML = props.readingList.map((book, index) => {
-    // console.log(index)
+    console.log(index)
     return (
       <div className="book-list">
         <h2>My Reading List</h2>
@@ -15,9 +15,13 @@ function BookList(props) {
     )
   })
 
+  console.log(myListHTML)
+
   return (
     <>
-      {myListHTML}
+      <Container>
+        {myListHTML}
+      </Container>
     </>
   );
 }

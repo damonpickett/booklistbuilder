@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { Container } from 'react-bootstrap'
 
 function RandomQuote() {
 
@@ -23,12 +24,14 @@ function RandomQuote() {
   }, [])
 
   return (
-    <div className="random-quote">
-      <h2>Random Quote</h2>
-      <p>{randomQuote.text}</p>
-      <p>{randomQuote.author}</p>
-      <button onClick={makeAPICall}>New Quote</button>
-    </div>
+    <Container>
+      <div className="random-quote">
+        <h2>Random Quote</h2>
+        <p>{randomQuote.text}</p>
+        <p>{randomQuote.author}</p>
+        <button onClick={makeAPICall}>New Quote</button>
+      </div>
+    </Container>
   );
   }
   

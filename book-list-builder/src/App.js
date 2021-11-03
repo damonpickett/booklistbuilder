@@ -1,5 +1,5 @@
 import './App.css';
-import Nav from './Components/Nav';
+import Navigation from './Components/Navigation';
 import Instructions from './Components/Instructions';
 import Footer from './Components/Footer';
 import RandomQuote from './Components/RandomQuote';
@@ -14,7 +14,7 @@ function App() {
   const [readingList, setReadingList] = useState([]);
 
   const addBookToList = (book) => {
-    // console.log(book);
+    console.log(book);
     setReadingList([...readingList, book])
   }
 
@@ -29,7 +29,7 @@ function App() {
 
   return (
     <div className="App">
-      <Nav />
+      <Navigation />
       <RandomQuote />
       <Route exact path='/' render={() => <Instructions />}/>
       <Route exact path='/' render={() => <BookFinder addBookToList={addBookToList} />}/>

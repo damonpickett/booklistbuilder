@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Container } from 'react-bootstrap'
 
 function BookFinder(props) {
 
@@ -17,7 +18,7 @@ function BookFinder(props) {
     fetch(`https://www.googleapis.com/books/v1/volumes?q=${book}&key=${apiKey}&maxResults=20`)
       .then(res => res.json())
       .then(data => {
-        console.log(data.items)
+        // console.log(data.items)
         setResult(data.items)
       })
   }
@@ -32,17 +33,19 @@ function BookFinder(props) {
     )
   })
 
-  // console.log(searchResultsHTML)
+  
 
   return (
-    <div className="book-finder">
-      {/* create a form with input and button */}
-      <form onSubmit={handleSubmit}>
-        <input onChange={handleChange} type="text" placeholder="Search for books" />
-        <button type="submit">Search</button>
-      </form>
-      {searchResultsHTML}
-    </div>
+    <Container>
+      <div className="book-finder">
+        {/* create a form with input and button */}
+        <form onSubmit={handleSubmit}>
+          <input onChange={handleChange} type="text" placeholder="Search for books" />
+          <button type="submit">Search</button>
+        </form>
+        {searchResultsHTML}
+      </div>
+    </Container>
   );
 }
   
