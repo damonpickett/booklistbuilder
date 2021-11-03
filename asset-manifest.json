@@ -1,0 +1,25 @@
+{
+  "files": {
+    "main.css": "/damonpickett/react-booklistbuilder/static/css/main.ea1455b2.chunk.css",
+    "main.js": "/damonpickett/react-booklistbuilder/static/js/main.04d63959.chunk.js",
+    "main.js.map": "/damonpickett/react-booklistbuilder/static/js/main.04d63959.chunk.js.map",
+    "runtime-main.js": "/damonpickett/react-booklistbuilder/static/js/runtime-main.479be437.js",
+    "runtime-main.js.map": "/damonpickett/react-booklistbuilder/static/js/runtime-main.479be437.js.map",
+    "static/css/2.0a9ec390.chunk.css": "/damonpickett/react-booklistbuilder/static/css/2.0a9ec390.chunk.css",
+    "static/js/2.cda43229.chunk.js": "/damonpickett/react-booklistbuilder/static/js/2.cda43229.chunk.js",
+    "static/js/2.cda43229.chunk.js.map": "/damonpickett/react-booklistbuilder/static/js/2.cda43229.chunk.js.map",
+    "static/js/3.b01ee802.chunk.js": "/damonpickett/react-booklistbuilder/static/js/3.b01ee802.chunk.js",
+    "static/js/3.b01ee802.chunk.js.map": "/damonpickett/react-booklistbuilder/static/js/3.b01ee802.chunk.js.map",
+    "index.html": "/damonpickett/react-booklistbuilder/index.html",
+    "static/css/2.0a9ec390.chunk.css.map": "/damonpickett/react-booklistbuilder/static/css/2.0a9ec390.chunk.css.map",
+    "static/css/main.ea1455b2.chunk.css.map": "/damonpickett/react-booklistbuilder/static/css/main.ea1455b2.chunk.css.map",
+    "static/js/2.cda43229.chunk.js.LICENSE.txt": "/damonpickett/react-booklistbuilder/static/js/2.cda43229.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.479be437.js",
+    "static/css/2.0a9ec390.chunk.css",
+    "static/js/2.cda43229.chunk.js",
+    "static/css/main.ea1455b2.chunk.css",
+    "static/js/main.04d63959.chunk.js"
+  ]
+}
