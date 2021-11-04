@@ -1,136 +1,97 @@
-# ![](https://ga-dash.s3.amazonaws.com/production/assets/logo-9f88ae6c9c3871690e33280fcf557f33.png) Project 2: React
-#### Overview
+# BookListBuilder
 
-Let's kick it up a notch and build a modular and modern front end application using React!
+BookList builder is an app which allows the user to search for books and create a reading list. The app also features a random quote generator to help inpsire the user's search.
 
-Like with project one, the Unit 2 project is a chance to be creative and build something you should be proud of. You will be working individually for this project.  Show us what you've got!
+## Motivation
 
-## Prerequistes
+The world is built with words. From The Bible, The Q'ran, The Tao Te Ching, The Wealth of Nations, The Origin of Species, The Art of War, and many others. The pen is not mightier than the sword, the pen *wields* the sword. But before books shape the world, they shape individuals. I wanted to build an app which would assist individuals in discovering the ideas which will inform their lives.
 
-In order to help set you up for success you are required to do the following before you attempt to plan out your project:
+## Build Status
 
-#### Reading
+The site features the baseline functionality outlined above. The site has mobile first CSS with many minor touches still needed. The CSS for larger screens has not been completed.
 
- The [previous cohorts project retrospective](previous-class-project-retrospective.md)
+## Code Style
 
-There are alot of helpful hints and hindsight that were captured after the completion of project 2 which are sure to help provide some guidance on what to and not to do during this project. 
+Standard
 
-#### Watch
+## Tech/Framework Used
 
- [Mastering Markdown](https://masteringmarkdown.com/) - 34min
+React.js, Bootstrap
 
- You will need to write and update markdown for this project as will be the case for all future projects so it's your responsibility to become familiar with the syntax.  
+## Features
 
----
+Random quote generator, searchable book database, the ability to compile a list of books.
 
-## Requirements
+## Code Example
 
-#### Your website must:
-- Be a working, interactive, React application.
-- Include data from a third-party API.
-    - TRY OUT your API in the browser by making an fetch request before you get too emotionally invested in it, to make sure it works the way you think it does...**YOU ARE REQUIRED TO SHOW US YOU CAN RECEIVE THE DATA FOR YOUR PROPOSAL**
-- Include React Router with at least 2 routes
-- Have at least 5 separate components, using a readable file structure.
-- Be built using Create React App.
-- Built mobile first 
-- Implement responsive design using flexbox, grid, or another css framework.
-- Use React Hooks
-- Be deployed on github pages https://github.com/gitname/react-gh-pages
+```javascript
+            function handleSubmit(event) {
+                event.preventDefault();
+                fetch(`https://www.googleapis.com/books/v1/volumes?q=${book}&key=${apiKey}&maxResults=20`)
+                .then(res => res.json())
+                .then(data => {
+                    // console.log(data.items)
+                    setResult(data.items)
+                })
+            }
 
-### 📋 List of API's
+            const searchResultsHTML = result.map(book => {
+                return(
+                <Card className='search-results-cards' key={book.id}>
+                    {book.volumeInfo.imageLinks ? <Card.Img className='search-results-img' src={book.volumeInfo.imageLinks.thumbnail} alt={book.volumeInfo.title}/> : <p>No image available<br />{book.volumeInfo.title} by {book.volumeInfo.authors}</p>}
+                    <Button variant='dark' className='search-results-button' onClick={() => props.addBookToList(book)}>Add to Reading List</Button>
+                    {/* <p key={book.id}>{book.volumeInfo.description}</p> */}
+                </Card>
+                )
+            })
 
- Pull data into the application using an API  
-  - [List of Public APIs](https://github.com/toddmotto/public-apis)  
-  - [More APIs](https://github.com/abhishekbanthia/Public-APIs)  
+            
 
-Below is a non-exhaustive list of some free API's you can use. There are _many_ API's out there, however, so if you find one not on this list that you'd like to use, feel free! Please note that some may require signing up for an API key (e.g. the Marvel API).
+            return (
+                <Container className='book-finder'>
+                <Row>
+                    <Col>
+                    <div className="book-finder">
+                        {/* create a form with input and button */}
+                        <Form className='book-search-form' onSubmit={handleSubmit}>
+                        <Form.Control className='book-search-input' onChange={handleChange} type="text" placeholder="Search for books" />
+                        <Button variant='success' className='book-search-button'type="submit">Search</Button>
+                        </Form>
+                        {searchResultsHTML}
+                    </div>
+                    </Col>
+                </Row>
+                </Container>
+            );
+```
 
-  1. Marvel: https://developer.marvel.com/
-  1. Star Wars: https://swapi.co/
-  1. Weather: https://openweathermap.org/api
-  1. News: https://newsapi.org/
-  1. Giphy: https://developers.giphy.com/
-  1. Pokemon: http://pokeapi.co/
-  1. Card Deck: https://deckofcardsapi.com/
-  1. Google Books: https://developers.google.com/books/
-  1. City of Chicago: https://data.cityofchicago.org/
-  1. Beer: https://www.brewerydb.com/developers
-  1. Chuck Norris: http://www.icndb.com/
-  1. Rick and Morty: https://rickandmortyapi.com/documentation/#rest
-  
-Lastly, the following sites congregates a bunch of API's together, so you can take a look through their libraries and try to find an API that interests you! Note, however, that not all API's are free and many listed may require payment. We **highly suggest** to use a free API for your first project dealing with one. 
-
-  1. https://github.com/toddmotto/public-apis
-  1. https://rapidapi.com/
-
-### Additional APIs
-
-#### Music
-
-* https://bandcamp.com/developer
-* https://developers.soundcloud.com/docs/api/reference
-
-#### Gov
-
-* https://developer.cityofnewyork.us/api/open311-inquiry
-
-#### Games
-
-* https://igdb.github.io/api/
-
-#### Social Media
-
-* https://developer.twitter.com/en/docs/tweets/search/overview
-
-#### Your code must:
-
-- Be properly indented.  
-- Be written with semantic, camelCase JavaScript variable names.  
-- Be written with kebab-case (dashes) CSS class names.  
-- Contain no `console.log()` or commented out code in final version.  
-- Use only React for DOM manipulation.  
-- No pre-loaded `create-react-app` files or code.
-
-## Necessary Deliverables
-
-#### Commits
-- Repo must contain frequent commits (min 15+) dating back to the beginning of the project.
-
-#### A Professional README
-- Refer to this [blog](https://medium.com/@meakaakka/a-beginners-guide-to-writing-a-kickass-readme-7ac01da88ab3) as a great resource on how to create a readme.
-
-#### A Completed Project Proposal:
-- Refer to the [project worksheet](/project-worksheet.md) file in this repo for structuring your Proposal.
-
-#### For the project:
-- A git repository hosted on GitHub, with a link to your hosted project, and **frequent** commits dating back to the very beginning of the project (YOUR APP SHOULD BE LOCATED IN A SEPARATE STANDING REPO. DO NOT build your app in this repository. YOU MUST initiate a new repo on your GitHub account.) 
-
-<hr>
-
-## Tips
-
-Read the following articles posted by previous students into how they planned and organized their thoughts into building a unit project.
-- [REACT.js : A Haunting by Sami Schonefeld
-](https://medium.com/@samischonefeld/react-js-a-haunting-cd2aaf15541f)
-- [how-i-built-my-first-obama-themed-javascript-game by Sarah Currey
-](https://medium.com/@sarah.currey/how-i-built-my-first-obama-themed-javascript-game-b06f7c62af4c)
-
--Commit early, commit often:   Don't be afraid to break something because you can always go back in time to a previous version.
+## Installation 
 
 
-## Check out these awesome websites for inspiration
-- https://www.foursquare.com
-- https://www.nike.com
-- https://www.airbnb.com
-- https://www.stripe.com
-- https://www.etsy.com
-- https://www.moma.org
-- https://www.nytimes.com
-- https://www.mint.com
-- https://www.popeyes.com
-- https://www.bk.com/menu/burgers
 
-## A Note on Plagiarism
+## API Reference
 
-Take a moment to re-familiarize yourself with the [plagiarism policy](https://git.generalassemb.ly/seir-1118/Administrative/blob/master/plagiarism.md), specifically on using work you find online and on work you do with other students.
+[Quote Free API](https://forum.freecodecamp.org/t/free-api-inspirational-quotes-json-with-code-examples/311373)
 
+[Google Books API](https://developers.google.com/books)
+
+## Tests
+
+
+
+## How to Use
+
+1. Enter a book title or author in the search bar. Click the search button or hit 'enter'.
+2. Add books to your list by clicking the 'Add to reading list' button
+3. Display your list by clicking the 'My List' link at header or footer of the app.
+4. Navigate to Google Books to purchase the book by clicking 'Buy' in your reading list, or remove the book from your list by clicking the 'Remove from list' button
+
+## Contribute
+
+
+
+## Credits
+
+Thank you to Coding Shiksha on YouTube for his [tutorial](https://www.youtube.com/watch?v=LGcgChoD_qY&t=740s) on creating a search feature with Google Books API.
+
+Thank you to Nathaniel Stack, instructor at [General Assembly](https://generalassemb.ly/?topic=&mkt_account_id=1056949875&mkt_campaign_id=1649389396&mkt_ad_group_id=64743638833&mkt_device_type=c&mkt_keyword=general%20assembly&mkt_matchtype=e&mkt_placement=&mkt_ad_id=524364733192&mkt_network=g&mkt_target_id=aud-387824918555:kwd-300765785657&mkt_feed_item_id=&utm_source=google&utm_medium=paid-search-bra&utm_campaign=TS:TX:BRA:CAREM:BR:GeneralAssembly&utm_content=campus-lead-lander&utm_term=general%20assembly&gclid=CjwKCAjwiY6MBhBqEiwARFSCPpCNSyaJsG17HTn6OE3TeIi_Jf3E--TT_7tpBw13UrY5orLWNz6kdxoCYIoQAvD_BwE) for his lesson on building a [Pokemon Podedex](https://git.generalassemb.ly/sei927/pokemon-pokedex/tree/master/pokemon/src). The lesson proved very helpful in building BookListBuilder as the structures of these apps are quite similar.
