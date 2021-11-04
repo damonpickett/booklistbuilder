@@ -5,7 +5,6 @@ import Footer from './Components/Footer';
 import RandomQuote from './Components/RandomQuote';
 import BookFinder from './Components/BookFinder';
 import BookList from './Components/BookList';
-// import QuoteFinder from './Components/QuoteFinder';
 import { useState } from "react";
 import { Route } from "react-router-dom";
 
