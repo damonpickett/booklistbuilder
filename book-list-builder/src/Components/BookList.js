@@ -20,7 +20,7 @@ function BookList(props) {
     <>
       <Container>
         <Row>
-          <Col sm='auto'>
+          <Col lg='auto'>
             <h2>My Reading List</h2>
             {myListHTML}
           </Col>

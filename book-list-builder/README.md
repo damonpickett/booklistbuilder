@@ -1,70 +1,97 @@
-# Getting Started with Create React App
+# BookListBuilder
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+BookList builder is an app which allows the user to search for books and create a reading list. The app also features a random quote generator to help inpsire the user's search.
 
-## Available Scripts
+## Motivation
 
-In the project directory, you can run:
+The world is built with words. From The Bible, The Q'ran, The Tao Te Ching, The Wealth of Nations, The Origin of Species, The Art of War, and many others. The pen is not mightier than the sword, the pen *wields* the sword. But before books shape the world, they shape individuals. I wanted to build an app which would assist individuals in discovering the ideas which will inform their lives.
 
-### `npm start`
+## Build Status
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+The site features the baseline functionality outlined above. The site has mobile first CSS with many minor touches still needed. The CSS for larger screens has not been completed.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+## Code Style
 
-### `npm test`
+Standard
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Tech/Framework Used
 
-### `npm run build`
+React.js, Bootstrap
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Features
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Random quote generator, searchable book database, the ability to compile a list of books.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Code Example
 
-### `npm run eject`
+```javascript
+            function handleSubmit(event) {
+                event.preventDefault();
+                fetch(`https://www.googleapis.com/books/v1/volumes?q=${book}&key=${apiKey}&maxResults=20`)
+                .then(res => res.json())
+                .then(data => {
+                    // console.log(data.items)
+                    setResult(data.items)
+                })
+            }
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+            const searchResultsHTML = result.map(book => {
+                return(
+                <Card className='search-results-cards' key={book.id}>
+                    {book.volumeInfo.imageLinks ? <Card.Img className='search-results-img' src={book.volumeInfo.imageLinks.thumbnail} alt={book.volumeInfo.title}/> : <p>No image available<br />{book.volumeInfo.title} by {book.volumeInfo.authors}</p>}
+                    <Button variant='dark' className='search-results-button' onClick={() => props.addBookToList(book)}>Add to Reading List</Button>
+                    {/* <p key={book.id}>{book.volumeInfo.description}</p> */}
+                </Card>
+                )
+            })
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+            
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+            return (
+                <Container className='book-finder'>
+                <Row>
+                    <Col>
+                    <div className="book-finder">
+                        {/* create a form with input and button */}
+                        <Form className='book-search-form' onSubmit={handleSubmit}>
+                        <Form.Control className='book-search-input' onChange={handleChange} type="text" placeholder="Search for books" />
+                        <Button variant='success' className='book-search-button'type="submit">Search</Button>
+                        </Form>
+                        {searchResultsHTML}
+                    </div>
+                    </Col>
+                </Row>
+                </Container>
+            );
+```
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+## Installation 
 
-## Learn More
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## API Reference
 
-### Code Splitting
+[Quote Free API](https://forum.freecodecamp.org/t/free-api-inspirational-quotes-json-with-code-examples/311373)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+[Google Books API](https://developers.google.com/books)
 
-### Analyzing the Bundle Size
+## Tests
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
 
-### Making a Progressive Web App
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+## How to Use
 
-### Advanced Configuration
+1. Enter a book title or author in the search bar. Click the search button or hit 'enter'.
+2. Add books to your list by clicking the 'Add to reading list' button
+3. Display your list by clicking the 'My List' link at header or footer of the app.
+4. Navigate to Google Books to purchase the book by clicking 'Buy' in your reading list, or remove the book from your list by clicking the 'Remove from list' button
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+## Contribute
 
-### Deployment
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
 
-### `npm run build` fails to minify
+## Credits
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Thank you to Coding Shiksha on YouTube for his [tutorial](https://www.youtube.com/watch?v=LGcgChoD_qY&t=740s) on creating a search feature with Google Books API.
+
+Thank you to Nathaniel Stack, instructor at [General Assembly](https://generalassemb.ly/?topic=&mkt_account_id=1056949875&mkt_campaign_id=1649389396&mkt_ad_group_id=64743638833&mkt_device_type=c&mkt_keyword=general%20assembly&mkt_matchtype=e&mkt_placement=&mkt_ad_id=524364733192&mkt_network=g&mkt_target_id=aud-387824918555:kwd-300765785657&mkt_feed_item_id=&utm_source=google&utm_medium=paid-search-bra&utm_campaign=TS:TX:BRA:CAREM:BR:GeneralAssembly&utm_content=campus-lead-lander&utm_term=general%20assembly&gclid=CjwKCAjwiY6MBhBqEiwARFSCPpCNSyaJsG17HTn6OE3TeIi_Jf3E--TT_7tpBw13UrY5orLWNz6kdxoCYIoQAvD_BwE) for his lesson on building a [Pokemon Podedex](https://git.generalassemb.ly/sei927/pokemon-pokedex/tree/master/pokemon/src). The lesson proved very helpful in building BookListBuilder as the structures of these apps are quite similar.
