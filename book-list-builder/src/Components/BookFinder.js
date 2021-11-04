@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Container } from 'react-bootstrap'
+import { Container, Form, Button, Card, Row, Col } from 'react-bootstrap'
 
 function BookFinder(props) {
 
@@ -25,26 +25,30 @@ function BookFinder(props) {
 
   const searchResultsHTML = result.map(book => {
     return(
-      <div className='book-card' key={book.id}>
-        {book.volumeInfo.imageLinks ? <img src={book.volumeInfo.imageLinks.thumbnail} alt={book.volumeInfo.title}/> : <p>No image available<br />{book.volumeInfo.title} by {book.volumeInfo.authors}</p>}
-        <button onClick={() => props.addBookToList(book)}>Add to Reading List</button>
+      <Card className='search-results-cards' key={book.id}>
+        {book.volumeInfo.imageLinks ? <Card.Img className='search-results-img' src={book.volumeInfo.imageLinks.thumbnail} alt={book.volumeInfo.title}/> : <p>No image available<br />{book.volumeInfo.title} by {book.volumeInfo.authors}</p>}
+        <Button variant='dark' className='search-results-button' onClick={() => props.addBookToList(book)}>Add to Reading List</Button>
         {/* <p key={book.id}>{book.volumeInfo.description}</p> */}
-      </div>
+      </Card>
     )
   })
 
   
 
   return (
-    <Container>
-      <div className="book-finder">
-        {/* create a form with input and button */}
-        <form onSubmit={handleSubmit}>
-          <input onChange={handleChange} type="text" placeholder="Search for books" />
-          <button type="submit">Search</button>
-        </form>
-        {searchResultsHTML}
-      </div>
+    <Container className='book-finder'>
+      <Row>
+        <Col>
+          <div className="book-finder">
+            {/* create a form with input and button */}
+            <Form className='book-search-form' onSubmit={handleSubmit}>
+              <Form.Control className='book-search-input' onChange={handleChange} type="text" placeholder="Search for books" />
+              <Button variant='success' className='book-search-button'type="submit">Search</Button>
+            </Form>
+            {searchResultsHTML}
+          </div>
+        </Col>
+      </Row>
     </Container>
   );
 }
@@ -52,3 +56,5 @@ function BookFinder(props) {
   export default BookFinder;
 
   // used https://www.youtube.com/watch?v=LGcgChoD_qY&t=740s as a guide for this component
+
+  // <input onChange={handleChange} type="text" placeholder="Search for books" />

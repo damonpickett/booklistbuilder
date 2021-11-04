@@ -1,17 +1,16 @@
-import { Container } from "react-bootstrap";
+import { Container, Card, Row, Col, Button } from "react-bootstrap";
 
 function BookList(props) {
 
   let myListHTML = props.readingList.map((book, index) => {
     console.log(index)
     return (
-      <div className="book-list">
-        <h2>My Reading List</h2>
+      <Card.Body className="book-list-card">
         <h3>{book.volumeInfo.title}</h3>
         <p>By {book.volumeInfo.authors}</p>
         <p><a href={book.volumeInfo.infoLink} rel='noreferrer' target='_blank'>Buy</a></p>
-        <button onClick={() => props.removeBook(index)}>Remove book from list</button>
-      </div>
+        <Button variant='secondary' className='book-list-button' onClick={() => props.removeBook(index)}>Remove from list</Button>
+      </Card.Body>
     )
   })
 
@@ -20,20 +19,15 @@ function BookList(props) {
   return (
     <>
       <Container>
-        {myListHTML}
+        <Row>
+          <Col sm='auto'>
+            <h2>My Reading List</h2>
+            {myListHTML}
+          </Col>
+        </Row>
       </Container>
     </>
   );
 }
 
 export default BookList;
-
-// () => {
-//   return /*#__PURE__*/Object(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_9__["jsxDEV"])("p", {
-//     children: "copyList is working"
-//   }, void 0, false, {
-//     fileName: _jsxFileName,
-//     lineNumber: 32,
-//     columnNumber: 7
-//   }, this);
-// }

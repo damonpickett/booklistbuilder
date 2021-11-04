@@ -1,15 +1,19 @@
 import { Link } from 'react-router-dom'
-import { Container } from 'react-bootstrap'
+import { Container, Row, Col } from 'react-bootstrap'
 
 function Footer() {
     return (
-      <Container>
-        <div className="footer">
-          <ul>
-            <Link to='/'><li>Home</li></Link>
-            <Link to='/mylist'><li>My Lists</li></Link>
-          </ul>
-        </div>
+      <Container className="footer">
+        <Row>
+          <Col lg='auto'>
+            <div>
+              <ul>
+                <Link className='footer-link' to='/'><li>Home</li></Link>
+                <Link className='footer-link' to='/mylist'><li>My Lists</li></Link>
+              </ul>
+            </div>
+          </Col>
+        </Row>
       </Container>
     );
   }

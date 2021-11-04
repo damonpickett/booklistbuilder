@@ -1,0 +1,136 @@
+/* UNIVERSAL */
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600&family=Zen+Antique+Soft&family=Zen+Kaku+Gothic+New:wght@300;400;500;700;900&family=Zen+Kurenaido&display=swap');
+/* font-family: 'Montserrat', sans-serif;
+font-family: 'Zen Antique Soft', serif;
+font-family: 'Zen Kaku Gothic New', sans-serif;
+font-family: 'Zen Kurenaido', sans-serif; */
+
+.App {
+    margin: 0;
+    padding: 0;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.App h1, h2, h3, h4, h5, h6 {
+    font-size: 1.25rem;
+}
+
+/* NAVBAR */
+
+.logo-link {
+    text-decoration: none;
+}
+
+.nav {
+    background-color: rgba(122	83	58);
+    padding: 10px 0 10px 0;
+}
+
+.nav h1 {
+    color: white;
+    margin: 0;
+    padding: 0;
+}
+
+.nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.nav li {
+    display: inline;
+    padding-right: 20px;
+}
+
+.navbar-link {
+    text-decoration: none;
+    color: white;
+}
+
+.navbar-link:hover {
+    text-decoration: underline;
+    color: white;
+}
+
+/* RANDOM QUOTE */
+
+.random-quote {
+    text-align: center;
+    margin: 10px 0 25px 0;
+    border: 2px solid rgba(204	202	201);
+    border-radius: 2px;
+    box-shadow: 1px 2px rgba(150 150 150);
+    font-family: 'Zen Kaku Gothic New', sans-serif;
+}
+
+.author-bold {
+    font-weight: 900;
+}
+
+/* INSTRUCTIONS */
+
+.instructions {
+    line-height: 30px;
+}
+
+/* BOOK FINDER  */
+
+.book-finder {
+    padding-top: 15px;
+    margin-bottom: 35px;
+}
+
+.book-search-form {
+    margin-bottom: 35px;
+}
+
+.book-search-input {
+    margin-bottom: 25px;
+}
+
+/* SEARCH RESULTS  */
+
+.search-results-cards {
+    margin-bottom: 25px;
+}
+
+.search-results-img {
+    margin-bottom: 15px;
+}
+
+.search-results-button {
+    padding: 10px 0 10px 0;
+}
+
+/* READING LIST  */
+
+.book-list-card {
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid rgba(200 200 200);
+    border-radius: 3px;
+}
+
+.book-list-card a {
+    text-decoration: none;
+}
+
+/* FOOTER  */
+
+.footer ul {
+    list-style-type: none;
+    display:flex;
+    justify-content: space-evenly;
+}
+
+.footer-link {
+    text-decoration: none;
+    font-size: 1.3rem;
+}
+
+.footer-link:hover {
+    text-decoration: underline;
+}
+

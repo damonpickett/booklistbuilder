@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { Container } from 'react-bootstrap'
+import { Container, Row, Col, Card, Button } from 'react-bootstrap'
 
 function RandomQuote() {
 
@@ -25,12 +25,15 @@ function RandomQuote() {
 
   return (
     <Container>
-      <div className="random-quote">
-        <h2>Random Quote</h2>
-        <p>{randomQuote.text}</p>
-        <p>{randomQuote.author}</p>
-        <button onClick={makeAPICall}>New Quote</button>
-      </div>
+      <Row>
+        <Col>
+          <Card.Body className='random-quote'>
+              <p>{randomQuote.text}</p>
+              <p><span className='author-bold'>{randomQuote.author}</span></p>
+              <Button variant='warning' onClick={makeAPICall}>New Quote</Button>
+          </Card.Body>
+        </Col>
+      </Row>
     </Container>
   );
   }
@@ -40,3 +43,5 @@ function RandomQuote() {
   // put api calls in makeAPICall and then fetch within that function. 
   // Set the state after the fetch. 
   // Call the makeAPIFunction within useEffect to stop the page from rerendering
+
+  // <button onClick={makeAPICall}>New Quote</button>
