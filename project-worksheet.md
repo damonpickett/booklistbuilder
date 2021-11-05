@@ -9,7 +9,7 @@
 
 ## Project Description
 
-I'm building an app called BookListBuilder. The purpose of this app is to allow a user to search for books and create a reading list which they can copy from the site and store on their device. I'll be using the Google Books API for my book search database. Selected books will appear on a card with a link to add the book to a list. There will also be a random quote generator as well as a quote search bar so the user can build their reading list off of quotes they find compelling. Users will have the option to create a quote list as well in the same way that they would create a reading list.
+I'm building an app called BookListBuilder. The purpose of this app is to allow a user to search for books and create a reading list which they can copy from the site and store on their device. I'll be using the Google Books API for my book search database. Selected books will appear on a card with a link to add the book to a list. There will also be a random quote generator so the user can build their reading list off of quotes they find compelling.
 
 ## API
 
@@ -112,13 +112,13 @@ Upload images of wireframe to cloudinary and add the link here with a descriptio
 | API: Book Finder implementation | H | 3hr | 2hr |
 | API: Quote Finder research | H | 2hr | 2hr |
 | API: Quote Finder implementation | H | 3hr | n/a |
-| Book List | H | 3hr | n/a |
+| Book List | H | 3hr | 3hr |
 | Quote List | H | 3hr | n/a |
 | Footer | H | 0.5hr | 0.25 |
-| Bootstrap CSS research | H | 3hr | n/a |
-| Bootstrap CSS implementation | H | 2hr | n/a |
-| Deployment/bug fixes | H | 3hr | n/a |
-| Total | H | 33hr | n/a |
+| Bootstrap CSS research | H | 3hr | 2hr |
+| Bootstrap CSS implementation | H | 2hr | 3hr |
+| Deployment/bug fixes | H | 3hr | 5hr |
+| Total | H | 33hr | 24.5hr |
 
 ## Additional Libraries
  
@@ -128,8 +128,16 @@ Upload images of wireframe to cloudinary and add the link here with a descriptio
 
 Use this section to include a brief code snippet of functionality that you are proud of an a brief description.  Code snippet should not be greater than 10 lines of code. 
 
-```
-function reverse(string) {
-	// here is the code to reverse a string of text
+```javascript
+return (
+    <div className="App">
+      <Navigation />
+      <RandomQuote />
+      <Route exact path='/' render={() => <Instructions />}/>
+      <Route exact path='/' render={() => <BookFinder addBookToList={addBookToList} />}/>
+      <Route exact path='/mylist' render={() => <BookList removeBook={removeBook} readingList={readingList} />}/>
+      <Footer />
+    </div>
+  );
 }
 ```
