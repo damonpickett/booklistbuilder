@@ -4,8 +4,8 @@
 
 ## Project Links
 
-- [add your github repo link]()
-- [add your deployment link]()
+- [github repo link](https://github.com/damonpickett/react-booklistbuilder/blob/main/project-worksheet.md)
+- [deployment link](https://damonpickett.github.io/react-booklistbuilder/)
 
 ## Project Description
 
