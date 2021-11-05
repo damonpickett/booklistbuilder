@@ -7,10 +7,10 @@ function Navigation() {
     <div className="nav">
       <Container>
         <Row>
-          <Col>
+          <Col xs sm md={8}>
             <Link className='logo-link' to='/'><h1>BookListBuilder</h1></Link>
           </Col>
-          <Col>
+          <Col xs sm md={4}>
             <ul>
               <Link className='navbar-link' to='/'><li>Home</li></Link>
               <Link className='navbar-link' to='/mylist'><li>My List</li></Link>
