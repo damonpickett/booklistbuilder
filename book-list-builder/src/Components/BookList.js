@@ -14,8 +14,6 @@ function BookList(props) {
     )
   })
 
-  console.log(myListHTML)
-
   return (
     <>
       <Container>

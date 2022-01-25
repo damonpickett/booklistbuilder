@@ -1,4 +1,4 @@
-import './App.css';
+import './App.css'; 
 import Navigation from './Components/Navigation';
 import Instructions from './Components/Instructions';
 import Footer from './Components/Footer';
@@ -13,27 +13,26 @@ function App() {
   const [readingList, setReadingList] = useState([]);
 
   const addBookToList = (book) => {
-    console.log(book);
     setReadingList([...readingList, book])
   }
 
   const removeBook = (indexToRemove) => {
     let newList = readingList.filter((book, index) => {
-      // console.log(index)
       return index !== indexToRemove
     })
-    // console.log(newList)
     setReadingList(newList)
   }
 
   return (
     <div className="App">
-      <Navigation />
-      <RandomQuote />
-      <Route exact path='/' render={() => <Instructions />}/>
-      <Route exact path='/' render={() => <BookFinder addBookToList={addBookToList} />}/>
-      <Route exact path='/mylist' render={() => <BookList removeBook={removeBook} readingList={readingList} />}/>
-      <Footer />
+      <div className='app-container'>
+        <Navigation />
+        <RandomQuote />
+        <Route exact path='/' render={() => <Instructions />}/>
+        <Route exact path='/' render={() => <BookFinder addBookToList={addBookToList} />}/>
+        <Route exact path='/mylist' render={() => <BookList removeBook={removeBook} readingList={readingList} />}/>
+        <Footer />
+      </div>
     </div>
   );
 }

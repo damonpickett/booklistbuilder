@@ -16,8 +16,6 @@ function RandomQuote() {
       })
   }
 
-  // console.log(randomQuote)
-
   // create a useEffect
   useEffect(() => {
     makeAPICall();
