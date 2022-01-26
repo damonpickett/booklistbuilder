@@ -23,12 +23,15 @@ function BookFinder(props) {
 
   const searchResultsHTML = result.map(book => {
     return(
-      
-          <Card className='search-results-cards' key={book.id}>
-            {book.volumeInfo.imageLinks ? <Card.Img className='search-results-img' src={book.volumeInfo.imageLinks.thumbnail} alt={book.volumeInfo.title}/> : <p>No image available<br />{book.volumeInfo.title} by {book.volumeInfo.authors}</p>}
-            <Button variant='dark' className='search-results-button' onClick={() => props.addBookToList(book)}>Add to Reading List</Button>
-            {/* <p key={book.id}>{book.volumeInfo.description}</p> */}
-          </Card>
+          // <div className='search-results-grid'>
+            <div className='search-results-cards' key={book.id}>
+              <Card style={{ width: '12rem'}}>
+                {book.volumeInfo.imageLinks ? <img className='search-results-img' src={book.volumeInfo.imageLinks.thumbnail} alt={book.volumeInfo.title}/> : <p>No image available<br />{book.volumeInfo.title} by {book.volumeInfo.authors}</p>}
+                <button className='search-results-button' onClick={() => props.addBookToList(book)}>Add to Reading List</button>
+                {/* <p key={book.id}>{book.volumeInfo.description}</p> */}
+              </Card>
+            </div>
+          // </div>
         
     )
   })
@@ -45,13 +48,11 @@ function BookFinder(props) {
               <Form.Control className='book-search-input' onChange={handleChange} type="text" placeholder="Search for books" />
               <Button variant='success' className='book-search-button'type="submit">Search</Button>
             </Form>
-            <Row xs={1} sm={3}>
-              {Array.from({ length: 1 }).map((book, idx) => (
-                <Col>
-                  {searchResultsHTML}
-                </Col>
-              ))}
-            </Row>
+            <div className='card-container'>
+              <CardGroup>
+                {searchResultsHTML}
+              </CardGroup>
+            </div>
           </div>
         </Col>
       </Row>

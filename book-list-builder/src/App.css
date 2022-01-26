@@ -94,16 +94,24 @@ font-family: 'Zen Kurenaido', sans-serif; */
 
 /* SEARCH RESULTS  */
 
+.card-group {
+    margin: 0 auto;
+}
+
 .search-results-cards {
-    margin-bottom: 25px;
+    /* margin-bottom: 25px auto; */
 }
 
 .search-results-img {
-    margin-bottom: 15px;
+    max-width: 240px;
+    max-height: 350px;
 }
 
 .search-results-button {
     padding: 10px 0 10px 0;
+    background: rgba(209, 216, 229);
+    border: none;
+    border-radius: 5px;
 }
 
 /* READING LIST  */
@@ -138,9 +146,21 @@ font-family: 'Zen Kurenaido', sans-serif; */
     text-decoration: underline;
 }
 
-/* @media screen and (min-width: 500px) {
-    .search-results-cards{
-        max-width: 25%;
-    }
-} */
+@media screen and (min-width: 500px) {
+    /* .search-results-grid {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+    }*/
+    /* .search-results-cards{
+        max-width: 20%;
+        display: inline;
+        overflow: auto;
+        margin: 10px;
+    } */
+
+    /* .search-results-cards > div {
+        flex-basis: calc(50% - 40px);
+    } */
+}
 
