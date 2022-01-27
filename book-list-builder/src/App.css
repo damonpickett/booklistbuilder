@@ -50,6 +50,21 @@ font-family: 'Zen Kurenaido', sans-serif; */
     font-size: 1.5rem;
 }
 
+.navbar-link {
+    text-decoration: none;
+    font-size: 1.3rem;
+    color: rgba(209, 216, 229);
+}
+
+.navbar-link:hover {
+    color: rgba(209, 216, 229);
+    text-decoration: underline;
+}
+
+.nav li {
+    list-style-type: none;
+}
+
 /* RANDOM QUOTE */
 
 .random-quote {
@@ -95,32 +110,38 @@ font-family: 'Zen Kurenaido', sans-serif; */
 /* SEARCH RESULTS  */
 
 .card-group {
-    margin: 0 auto;
+    justify-content: center;
 }
 
-.search-results-cards {
-    /* margin-bottom: 25px auto; */
+.card {
+    margin-bottom: 25px;
+    margin-right: 25px;
 }
 
-.search-results-img {
-    max-width: 240px;
-    max-height: 350px;
-}
-
-.search-results-button {
+.search-results-button, .book-list-button {
     padding: 10px 0 10px 0;
     background: rgba(209, 216, 229);
     border: none;
     border-radius: 5px;
+    transition: All 450ms ease;
+    position:relative;
+}
+
+.search-results-button:active, .book-list-button:active {
+    transition: All 250ms ease;
+    background: blue;
+    /* top: 3px; */
+    position:relative;
 }
 
 /* READING LIST  */
 
-.book-list-card {
-    padding: 10px;
-    margin-bottom: 15px;
-    border: 1px solid rgba(200 200 200);
-    border-radius: 3px;
+.book-list-container {
+    margin-bottom: 50px;
+}
+
+.book-list-container h2 {
+    margin-bottom: 50px;
 }
 
 .book-list-card a {

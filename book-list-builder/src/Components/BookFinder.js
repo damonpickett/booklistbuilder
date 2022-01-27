@@ -23,16 +23,13 @@ function BookFinder(props) {
 
   const searchResultsHTML = result.map(book => {
     return(
-          // <div className='search-results-grid'>
-            <div className='search-results-cards' key={book.id}>
-              <Card style={{ width: '12rem'}}>
-                {book.volumeInfo.imageLinks ? <img className='search-results-img' src={book.volumeInfo.imageLinks.thumbnail} alt={book.volumeInfo.title}/> : <p>No image available<br />{book.volumeInfo.title} by {book.volumeInfo.authors}</p>}
-                <button className='search-results-button' onClick={() => props.addBookToList(book)}>Add to Reading List</button>
-                {/* <p key={book.id}>{book.volumeInfo.description}</p> */}
-              </Card>
-            </div>
-          // </div>
-        
+        <div className='search-results-cards' key={book.id}>
+          <Card style={{ width: '12rem'}}>
+            {book.volumeInfo.imageLinks ? <img className='search-results-img' src={book.volumeInfo.imageLinks.thumbnail} alt={book.volumeInfo.title}/> : <p>No image available<br />{book.volumeInfo.title} by {book.volumeInfo.authors}</p>}
+            <button className='search-results-button' onClick={() => props.addBookToList(book)}>Add to Reading List</button>
+            {/* <p key={book.id}>{book.volumeInfo.description}</p> */}
+          </Card>
+        </div>
     )
   })
 
