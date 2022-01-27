@@ -6,67 +6,84 @@ font-family: 'Zen Antique Soft', serif;
 font-family: 'Zen Kaku Gothic New', sans-serif;
 font-family: 'Zen Kurenaido', sans-serif; */
 
+/* background 26 37	53	 */
+/* foreground 41 60	88	 */
+/* text 209	216	229	*/
+
+* {
+    background: rgba(26 37	53);
+}
+
 .App {
     margin: 0;
     padding: 0;
     font-family: 'Montserrat', sans-serif;
+    color: rgba(209, 216, 229);
 }
 
 .App h1, h2, h3, h4, h5, h6 {
     font-size: 1.25rem;
 }
 
+.app-container {
+    max-width: 750px;
+    margin: 0 auto;
+}
+
 /* NAVBAR */
 
 .logo-link {
     text-decoration: none;
+    color: rgba(209, 216, 229);
+}
+
+.logo-link:hover {
+    color: rgba(209, 216, 229);
+    text-decoration: underline;
 }
 
 .nav {
-    background-color: rgba(122	83	58);
-    padding: 10px 0 10px 0;
+    padding: 15px;
 }
 
 .nav h1 {
-    color: white;
-    margin: 0;
-    padding: 0;
-}
-
-.nav ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-}
-
-.nav li {
-    display: inline;
-    padding-right: 20px;
+    font-size: 1.5rem;
 }
 
 .navbar-link {
     text-decoration: none;
-    color: white;
+    font-size: 1.3rem;
+    color: rgba(209, 216, 229);
 }
 
 .navbar-link:hover {
+    color: rgba(209, 216, 229);
     text-decoration: underline;
-    color: white;
+}
+
+.nav li {
+    list-style-type: none;
 }
 
 /* RANDOM QUOTE */
 
 .random-quote {
     text-align: center;
-    margin: 10px 0 25px 0;
-    border: 2px solid rgba(204	202	201);
-    border-radius: 2px;
-    box-shadow: 1px 2px rgba(150 150 150);
+    margin: 15px 0 50px 0;
+    border-radius: 10px;
     font-family: 'Zen Kaku Gothic New', sans-serif;
+    background: rgba(41, 60, 88);
+    font-weight: bold;
+}
+
+.random-quote p {
+    background: rgba(41, 60, 88);
 }
 
 .author-bold {
     font-weight: 900;
+    background: rgba(41, 60, 88);
+    font-style: italic;
 }
 
 /* INSTRUCTIONS */
@@ -92,25 +109,39 @@ font-family: 'Zen Kurenaido', sans-serif; */
 
 /* SEARCH RESULTS  */
 
-.search-results-cards {
+.card-group {
+    justify-content: center;
+}
+
+.card {
     margin-bottom: 25px;
+    margin-right: 25px;
 }
 
-.search-results-img {
-    margin-bottom: 15px;
-}
-
-.search-results-button {
+.search-results-button, .book-list-button {
     padding: 10px 0 10px 0;
+    background: rgba(209, 216, 229);
+    border: none;
+    border-radius: 5px;
+    transition: All 450ms ease;
+    position:relative;
+}
+
+.search-results-button:active, .book-list-button:active {
+    transition: All 250ms ease;
+    background: blue;
+    /* top: 3px; */
+    position:relative;
 }
 
 /* READING LIST  */
 
-.book-list-card {
-    padding: 10px;
-    margin-bottom: 15px;
-    border: 1px solid rgba(200 200 200);
-    border-radius: 3px;
+.book-list-container {
+    margin-bottom: 50px;
+}
+
+.book-list-container h2 {
+    margin-bottom: 50px;
 }
 
 .book-list-card a {
@@ -128,9 +159,29 @@ font-family: 'Zen Kurenaido', sans-serif; */
 .footer-link {
     text-decoration: none;
     font-size: 1.3rem;
+    color: rgba(209, 216, 229);
 }
 
 .footer-link:hover {
+    color: rgba(209, 216, 229);
     text-decoration: underline;
+}
+
+@media screen and (min-width: 500px) {
+    /* .search-results-grid {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+    }*/
+    /* .search-results-cards{
+        max-width: 20%;
+        display: inline;
+        overflow: auto;
+        margin: 10px;
+    } */
+
+    /* .search-results-cards > div {
+        flex-basis: calc(50% - 40px);
+    } */
 }
 

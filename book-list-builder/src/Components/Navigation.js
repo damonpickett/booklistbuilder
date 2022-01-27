@@ -12,7 +12,6 @@ function Navigation() {
           </Col>
           <Col xs sm md={4}>
             <ul>
-              <Link className='navbar-link' to='/'><li>Home</li></Link>
               <Link className='navbar-link' to='/mylist'><li>My List</li></Link>
             </ul>
           </Col>
@@ -20,16 +19,6 @@ function Navigation() {
       </Container>
     </div>
   )
-
-  // return (
-  //   <div className="nav">
-  //     <h1>BookListBuilder</h1>
-  //     <ul>
-  //       <Link to='/'><li>Home</li></Link>
-  //       <Link to='/mylist'><li>My Lists</li></Link>
-  //     </ul>
-  //   </div>
-  // );
 }
   
   export default Navigation;

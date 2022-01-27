@@ -1,31 +1,31 @@
-import { Container, Card, Row, Col, Button } from "react-bootstrap";
+import { Container, Card, Row, Col, Button, CardGroup } from "react-bootstrap";
 
 function BookList(props) {
 
   let myListHTML = props.readingList.map((book, index) => {
     console.log(index)
     return (
-      <Card.Body className="book-list-card">
-        <h3>{book.volumeInfo.title}</h3>
-        <p>By {book.volumeInfo.authors}</p>
-        <p><a href={book.volumeInfo.infoLink} rel='noreferrer' target='_blank'>Buy</a></p>
-        <Button variant='secondary' className='book-list-button' onClick={() => props.removeBook(index)}>Remove from list</Button>
-      </Card.Body>
+      <div className='search-results-cards' key={book.id}>
+          <Card style={{ width: '12rem'}}>
+            {book.volumeInfo.imageLinks ? <img className='search-results-img' src={book.volumeInfo.imageLinks.thumbnail} alt={book.volumeInfo.title}/> : <p>No image available<br />{book.volumeInfo.title} by {book.volumeInfo.authors}</p>}
+            {/* <p><a href={book.volumeInfo.infoLink} rel='noreferrer' target='_blank'>Buy</a></p> */}
+            <button className='book-list-button' onClick={() => props.removeBook(index)}>Remove from list</button>
+            {/* <p key={book.id}>{book.volumeInfo.description}</p> */}
+          </Card>
+        </div>
     )
   })
 
-  console.log(myListHTML)
-
   return (
     <>
-      <Container>
-        <Row>
-          <Col lg='auto'>
+      <div className='book-list-container'>
+        
             <h2>My Reading List</h2>
-            {myListHTML}
-          </Col>
-        </Row>
-      </Container>
+            <CardGroup>
+              {myListHTML}
+            </CardGroup>
+          
+      </div>
     </>
   );
 }
