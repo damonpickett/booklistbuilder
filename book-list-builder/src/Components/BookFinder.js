@@ -36,9 +36,8 @@ function BookFinder(props) {
   
 
   return (
-    <Container className='book-finder'>
-      <Row>
-        <Col>
+    
+      <Container>
           <div className="book-finder">
             {/* create a form with input and button */}
             <Form className='book-search-form' onSubmit={handleSubmit}>
@@ -51,9 +50,8 @@ function BookFinder(props) {
               </CardGroup>
             </div>
           </div>
-        </Col>
-      </Row>
-    </Container>
+        </Container>
+    
   );
 }
   
