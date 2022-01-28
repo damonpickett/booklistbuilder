@@ -77,6 +77,7 @@ font-family: 'Zen Kurenaido', sans-serif; */
     font-family: 'Zen Kaku Gothic New', sans-serif;
     background: rgba(41, 60, 88);
     font-weight: bold;
+    padding: 25px;
 }
 
 .random-quote p {

@@ -22,17 +22,11 @@ function RandomQuote() {
   }, [])
 
   return (
-    <Container>
-      <Row>
-        <Col>
-          <Card.Body className='random-quote'>
-              <p>{randomQuote.text}</p>
-              <p><span className='author-bold'>{randomQuote.author}</span></p>
-              <Button variant='warning' onClick={makeAPICall}>New Quote</Button>
-          </Card.Body>
-        </Col>
-      </Row>
-    </Container>
+        <div className='random-quote'>
+            <p>{randomQuote.text}</p>
+            <p><span className='author-bold'>{randomQuote.author}</span></p>
+            <Button variant='warning' onClick={makeAPICall}>New Quote</Button>
+        </div>
   );
   }
   
