@@ -6,7 +6,7 @@ function BookList(props) {
     console.log(index)
     return (
       <div className='search-results-cards' key={book.id}>
-          <Card style={{ width: '12rem'}}>
+          <Card>
             {book.volumeInfo.imageLinks ? <img className='search-results-img' src={book.volumeInfo.imageLinks.thumbnail} alt={book.volumeInfo.title}/> : <p>No image available<br />{book.volumeInfo.title} by {book.volumeInfo.authors}</p>}
             {/* <p><a href={book.volumeInfo.infoLink} rel='noreferrer' target='_blank'>Buy</a></p> */}
             <button className='book-list-button' onClick={() => props.removeBook(index)}>Remove from list</button>

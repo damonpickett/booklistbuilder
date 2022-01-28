@@ -24,7 +24,7 @@ function BookFinder(props) {
   const searchResultsHTML = result.map(book => {
     return(
         <div className='search-results-cards' key={book.id}>
-          <Card style={{ width: '12rem'}}>
+          <Card>
             {book.volumeInfo.imageLinks ? <img className='search-results-img' src={book.volumeInfo.imageLinks.thumbnail} alt={book.volumeInfo.title}/> : <p>No image available<br />{book.volumeInfo.title} by {book.volumeInfo.authors}</p>}
             <button className='search-results-button' onClick={() => props.addBookToList(book)}>Add to Reading List</button>
             {/* <p key={book.id}>{book.volumeInfo.description}</p> */}
@@ -36,7 +36,6 @@ function BookFinder(props) {
   
 
   return (
-    
       <Container>
           <div className="book-finder">
             {/* create a form with input and button */}
@@ -51,7 +50,6 @@ function BookFinder(props) {
             </div>
           </div>
         </Container>
-    
   );
 }
   
