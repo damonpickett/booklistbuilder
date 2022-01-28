@@ -120,6 +120,7 @@ font-family: 'Zen Kurenaido', sans-serif; */
 .card {
     margin-bottom: 25px;
     margin-right: 25px;
+    width: '12rem';
 }
 
 .search-results-button, .book-list-button {
