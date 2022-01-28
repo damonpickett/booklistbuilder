@@ -56,7 +56,3 @@ function BookFinder(props) {
 }
   
   export default BookFinder;
-
-  // used https://www.youtube.com/watch?v=LGcgChoD_qY&t=740s as a guide for this component
-
-  // <input onChange={handleChange} type="text" placeholder="Search for books" />
