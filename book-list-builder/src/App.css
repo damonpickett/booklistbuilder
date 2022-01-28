@@ -44,6 +44,9 @@ font-family: 'Zen Kurenaido', sans-serif; */
 
 .nav {
     padding: 15px;
+    display:flex;
+    flex-direction: row;
+    justify-content: space-between;
 }
 
 .nav h1 {
